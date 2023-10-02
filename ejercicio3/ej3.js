@@ -5,7 +5,7 @@ let divisor = [];
 
 var numero;
 while (numero < minimo || numero > maximo || isNaN(numero)) {
-    numero = prompt("Introduce un numero entero entre 1 y 100:");
+    numero = prompt("Introduce un numero entero entre 1 y 100");
 }
 
 function esDivisible(numero, divisor) {
