@@ -1,5 +1,5 @@
-var num1 = prompt("Escriba el primer numero");
-var num2 = prompt("Escriba el segundo número");
+var num1 = parseInt(prompt("Escriba el primer numero"));
+var num2 = parseInt(prompt("Escriba el segundo número"));
 var operador = prompt("Escriba que operación quiere realizar");
 var resultado;
 
