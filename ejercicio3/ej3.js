@@ -5,7 +5,7 @@ let divisor = [];
 
 var numero;
 while (numero < minimo || numero > maximo || isNaN(numero)) {
-    numero = prompt("Error: Introduce un numero entero entre 1 y 100:");
+    numero = prompt("Introduce un numero entero entre 1 y 100");
 }
 
 function esDivisible(numero, divisor) {
@@ -19,14 +19,11 @@ function esDivisible(numero, divisor) {
 for(var i = 0; i < 4; i++) {
     
     if(esDivisible(numero, divisores[i])){
-    divisores[i] = divisor[i];
+    divisor[i] = divisores[i];
     }
 }
 
-if(!esDivisible) {
+if(divisor.length == 0) {
     alert ("No es divisible entre " + divisores);
 }
 else alert ("Es divisible entre " + divisor);
-
-
-
