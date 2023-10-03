@@ -1,43 +1,47 @@
-var num1 = prompt("Escriba el primer numero");
-var num2 = prompt("Escriba el segundo número");
+var num1 = parseInt(prompt("Escriba el primer numero"));
+var num2 = parseInt(prompt("Escriba el segundo número"));
 var operador = prompt("Escriba que operación quiere realizar");
 var resultado;
 
-while(operador != "FIN") {
-switch(operador) {
-    case "+":
-        resultado = num1 + num2;
-        break;
-    case "-":
-        resultado = num1 - num2;
-        break;
-    case "*":
-        resultado = num1*num2;
-        break;
-    case "/":
-        resultado = num1/num2
-        while(isNaN(num2)) {
-            num2 = prompt("Escriba el segundo número de nuevo");
-        };   
+while (operador != "FIN") {
+    validaOperador();
+    switch (operador) {
+        case "+":
+            resultado = num1 + num2;
+            num1 = resultado;
+            console.log(resultado);
+            break;
+        case "-":
+            resultado = num1 - num2;
+            num1 = resultado;
+            console.log(resultado);
+            break;
+        case "*":
+            resultado = num1 * num2;
+            num1 = resultado;
+            console.log(resultado);
+            break;
+        case "/":
+            if(divisionValida()) {
+            resultado = num1 / num2
+            num1 = resultado;
+            console.log(resultado);
+            }
     }
 
+    operador = prompt("Escriba otra operacion o FIN para finalizar");
 }
 
 function validaOperador() {
-    let valido = false;
-    if(operador = "+" || "-" || "*" || "/") {
-        valido = true;
+    while (operador != "+" && operador != "-" && operador != "*" && operador != "/" && operador != "FIN") {
+        operador = prompt("Escriba de nuevo qué operación quiere realizar");
     }
-    return valido;
 }
 function divisionValida() {
-    let valido = false;
-    if(resultado == 0) {
-        valido = true;
+    let valido = true ;
+    if (num2 === null) {
+        num2 = parseInt(prompt("No se puede dividr. Ingrese un numero diferente"))
+        return valido == false
     }
-    return valido;
+   else return valido;
 }
-
-alert(resultado);
-console.log(validaOperador());
-console.log(divisionValida());
